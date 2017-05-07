@@ -36,6 +36,8 @@
 "    :vs           --- open new vertical tab
 "
 "    ,,            --- move the whole line to the left border
+"
+"    m             --- insert next empty line (with O) and return back to normal mode
 " in visual mode:
 "    //            --- yank selected text and search for its next occurence
 "    
@@ -45,9 +47,10 @@
 " tricks
 :nnoremap v$ v$h
 :nnoremap QQ :wqa<ENTER>
-:nnoremap qq :qa!<ENTER>
-:nnoremap E :vs<ENTER>:e<SPACE>
+:nnoremap qq :q!<ENTER>
+:nnoremap E :vs<ENTER><C-w>w:e<SPACE>
 :nnoremap ,, <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+:nnoremap m o<ESC>
 
 " jump
 :nnoremap J 25j
