@@ -4,22 +4,22 @@
 " user defined commands:
 "
 " in visual and normal mode:
-"    J            --- move down for 25 lines
+"    J             --- move down for 25 lines
 "
-"    K            --- move up for 25 lines
+"    K             --- move up for 25 lines
 "
-"    B            --- move 4 words backward
+"    B             --- move 4 words backward
 "
-"    W            --- move 4 words forward
+"    W             --- move 4 words forward
 "
 "    L             --- go to the bottom of the screen
 " in normal mode:
-"    //           --- select word under cursor and search for its next occurence
+"    //            --- select word under cursor and search for its next occurence
 "
-"    #            --- select word under cursor and search for its previous occurence
+"    #             --- select word under cursor and search for its previous occurence
 "
-"    R            --- select word under cursor and create a command which
-"                     replaces it everywhere in the text: :%s/<word>/<word>/g
+"    R             --- select word under cursor and create a command which
+"                      replaces it everywhere in the text: :%s/<word>/<word>/g
 "
 "    QQ            --- save file and exit from vim
 "
@@ -38,6 +38,9 @@
 "    ,,            --- move the whole line to the left border
 "
 "    m             --- insert next empty line (with O) and return back to normal mode
+"
+"   :vs            --- open the same file in the second tab
+"
 " in visual mode:
 "    //            --- yank selected text and search for its next occurence
 "    
@@ -83,7 +86,5 @@ set shiftwidth=4
 " On pressing tab, insert 4 spaces
 set expandtab
 
-" Open the same file in the second tab
-":vs
-"
-let g:tmuxify_custom_command = 'tmux split-window -d'
+" Shell scripts
+:silent exec "!bash ~/.vim/map_capslock.sh off"
