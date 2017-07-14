@@ -54,6 +54,8 @@
 :nnoremap E :vs<ENTER><C-w>w:e<SPACE>
 :nnoremap ,, <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 :nnoremap m o<ESC>
+:nnoremap <Space> i <ESC>l
+:nnoremap <TAB> i<TAB><ESC>
 
 " jump
 :nnoremap J 25j
