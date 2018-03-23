@@ -1,6 +1,27 @@
 :set number
 :set relativenumber
-:source ~/.vim/colors/apprentice.vim
+
+" Vundle plugins
+set nocompatible              " be iMproved, required
+filetype off                  " required
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'arcticicestudio/nord-vim'
+
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+" Colors
+colorscheme apprentice
+let g:cpp_class_scope_highlight = 1
+let g:cpp_member_variable_highlight = 1
+let g:cpp_class_decl_highlight = 1
+let g:cpp_experimental_simple_template_highlight = 1
+let g:cpp_concepts_highlight = 1
+let g:cpp_no_function_highlight = 1
 
 " user defined commands:
 "
