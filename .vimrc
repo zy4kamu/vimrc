@@ -120,7 +120,7 @@ set laststatus=2
 " NERDTree
 map <F3> :NERDTree<ENTER>
 let NERDTreeQuitOnOpen=1
-let g:NERDTreeWinSize=60
+let g:NERDTreeWinSize=120
 
 " Go to definition
 map go <C-]>
