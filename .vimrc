@@ -1,5 +1,6 @@
 :set number
 :set relativenumber
+:source ~/.vim/colors/apprentice.vim
 
 " user defined commands:
 "
@@ -46,6 +47,10 @@
 "    
 "    R             --- select text under cursor and create a command which
 "                     replaces it everywhere in the text: :%s/<word>/<word>/g
+
+" cscope
+:cs add cscope.out
+nmap <c-f> :cs find g <c-r>=expand("<cword>")<cr><cr>
 
 " tricks
 :nnoremap v$ v$h
