@@ -16,13 +16,7 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 
 " Colors
-colorscheme apprentice
-let g:cpp_class_scope_highlight = 1
-let g:cpp_member_variable_highlight = 1
-let g:cpp_class_decl_highlight = 1
-let g:cpp_experimental_simple_template_highlight = 1
-let g:cpp_concepts_highlight = 1
-let g:cpp_no_function_highlight = 1
+colorscheme nord
 
 " user defined commands:
 "
@@ -117,3 +111,7 @@ set expandtab
 
 " Shell scripts
 :silent exec "!bash ~/.vim/map_capslock.sh off"
+
+" Print file path in the bottom of screen
+set statusline+=%F
+set laststatus=2
