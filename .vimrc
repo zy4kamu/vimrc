@@ -121,3 +121,7 @@ set laststatus=2
 map <F3> :NERDTree<ENTER>
 let NERDTreeQuitOnOpen=1
 let g:NERDTreeWinSize=60
+
+" Go to definition
+map go <C-]>
+map gi <C-t>
