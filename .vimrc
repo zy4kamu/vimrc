@@ -1,23 +1,3 @@
-:set number
-:set relativenumber
-
-" Vundle plugins
-set nocompatible              " be iMproved, required
-filetype off                  " required
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'octol/vim-cpp-enhanced-highlight'
-Plugin 'arcticicestudio/nord-vim'
-Plugin 'Valloric/YouCompleteMe'
-
-call vundle#end()            " required
-filetype plugin indent on    " required
-
-" Colors
-colorscheme nord
-
 " user defined commands:
 "
 " in visual and normal mode:
@@ -63,6 +43,27 @@ colorscheme nord
 "    
 "    R             --- select text under cursor and create a command which
 "                     replaces it everywhere in the text: :%s/<word>/<word>/g
+
+:set number
+:set relativenumber
+
+" Vundle plugins
+set nocompatible              " be iMproved, required
+filetype off                  " required
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'arcticicestudio/nord-vim'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'scrooloose/nerdtree'
+
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+" Colors
+colorscheme nord
 
 " cscope
 :cs add cscope.out
@@ -115,3 +116,8 @@ set expandtab
 " Print file path in the bottom of screen
 set statusline+=%F
 set laststatus=2
+
+" NERDTree
+map <F3> :NERDTree<ENTER>
+let NERDTreeQuitOnOpen=1
+let g:NERDTreeWinSize=60
