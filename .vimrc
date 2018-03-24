@@ -58,12 +58,14 @@ Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'arcticicestudio/nord-vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/nerdtree'
+Plugin 'flazz/vim-colorschemes'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
 
 " Colors
-colorscheme nord
+" colorscheme colorsbox-greenish
+:highlight Normal ctermbg=darkgrey
 let g:cpp_class_scope_highlight = 1
 let g:cpp_member_variable_highlight = 1
 let g:cpp_class_decl_highlight = 1
