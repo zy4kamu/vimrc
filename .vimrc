@@ -83,7 +83,7 @@ nmap <c-f> :cs find g <c-r>=expand("<cword>")<cr><cr>
 " tricks
 :nnoremap v$ v$h
 :nnoremap QQ :wqa<ENTER>
-:nnoremap qq :q!<ENTER>
+:nnoremap qq :qa!<ENTER>
 :nnoremap E :vs<ENTER><C-w>w:e<SPACE>
 :nnoremap ,, <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 :nnoremap m o<ESC>
@@ -129,7 +129,7 @@ set expandtab
 set laststatus=2
 
 " NERDTree
-map <F3> :NERDTree<ENTER><C-w>l:NERDTreeFind<ENTER>
+map <F3> :NERDTree<ENTER><C-w>l:NERDTreeFind<ENTER><C-w>h
 let NERDTreeQuitOnOpen=1
 let g:NERDTreeWinSize=120
 
