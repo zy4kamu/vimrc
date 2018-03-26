@@ -66,12 +66,15 @@ filetype plugin indent on    " required
 " Colors
 " colorscheme colorsbox-greenish
 :highlight Normal ctermbg=darkgrey
+:set hlsearch
 let g:cpp_class_scope_highlight = 1
 let g:cpp_member_variable_highlight = 1
 let g:cpp_class_decl_highlight = 1
 let g:cpp_experimental_simple_template_highlight = 1
 let g:cpp_experimental_template_highlight = 1
 let g:cpp_concepts_highlight = 1
+
+let g:loaded_youcompleteme = 1 " delete later
 
 " cscope
 :cs add cscope.out
@@ -122,11 +125,11 @@ set expandtab
 :silent exec "!bash ~/.vim/map_capslock.sh off"
 
 " Print file path in the bottom of screen
-set statusline+=%F
+" set statusline+=%F
 set laststatus=2
 
 " NERDTree
-map <F3> :NERDTree<ENTER>
+map <F3> :NERDTree<ENTER><C-w>l:NERDTreeFind<ENTER>
 let NERDTreeQuitOnOpen=1
 let g:NERDTreeWinSize=120
 
