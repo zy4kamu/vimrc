@@ -64,8 +64,8 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 
 " Colors
-" colorscheme colorsbox-greenish
-:highlight Normal ctermbg=darkgrey
+colorscheme blueshift
+" :highlight Normal ctermbg=darkgrey
 :set hlsearch
 let g:cpp_class_scope_highlight = 1
 let g:cpp_member_variable_highlight = 1
@@ -112,13 +112,13 @@ nmap <c-f> :cs find g <c-r>=expand("<cword>")<cr><cr>
 " indent
 filetype plugin indent on
 
-" show existing tab with 4 spaces width
-set tabstop=4
+" show existing tab with 2 spaces width
+set tabstop=2
 
-" when indenting with '>', use 4 spaces width
-set shiftwidth=4
+" when indenting with '>', use 2 spaces width
+set shiftwidth=2
 
-" On pressing tab, insert 4 spaces
+" On pressing tab, insert 2 spaces
 set expandtab
 
 " Shell scripts
@@ -136,6 +136,10 @@ let g:NERDTreeWinSize=120
 " Go to definition
 map go <C-]>
 map gi <C-t>
+
+" Switch between windows
+map <C-h> <C-w>h
+map <C-l> <C-w>l
 
 " Find file in current directory and edit it.
 map <C-k> :Find **<left>
