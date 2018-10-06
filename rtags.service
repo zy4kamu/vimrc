@@ -1,0 +1,11 @@
+[Unit]
+Description=Service for navigation over C++ code
+ 
+[Service]
+Type=simple
+RemainAfterExit=yes
+ExecStart=/bin/bash -c 'nohup /usr/loca/bin/rdm >> /var/log/rtsgs.log &'
+ExecStop=/bin/bash -c 'killall -9 rdm'
+
+[Install]
+WantedBy=multi-user.target

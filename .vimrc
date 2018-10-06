@@ -44,9 +44,15 @@
 "
 "    <C-i>         --- go to next navigation position
 "
-"    go            --- go to definition if tags plugin is enabled
+"    <C-]>         --- go to definition if tags plugin is enabled
 "
-"    gi            --- revert go to defintion if tags plugin is enabled
+"    <C-t>         --- revert go to defintion if tags plugin is enabled
+"    
+"    go            --- go to definition with rtags plugin
+"
+"    C-q           --- search for file (manual function)
+"
+"    C-k           --- search for file with Command-T plugin
 "
 " in visual mode:
 "    //            --- yank selected text and search for its next occurence
@@ -69,6 +75,8 @@ Plugin 'arcticicestudio/nord-vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/nerdtree'
 Plugin 'flazz/vim-colorschemes'
+Plugin 'wincent/command-t'
+Plugin 'lyuts/vim-rtags'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -117,7 +125,7 @@ set splitbelow
 " search
 :nnoremap // viwy/<C-r>"<ENTER>
 :vnoremap // y/<C-r>"<ENTER>
-
+:nnoremap <C-k> :CommandT .<ENTER>
 
 " replace
 :nnoremap R yiw:%s/<C-r>"/<C-r>"/g<left><left>
@@ -147,16 +155,15 @@ map <F3> :NERDTree<ENTER><C-w>l:NERDTreeFind<ENTER><C-w>h
 let NERDTreeQuitOnOpen=1
 let g:NERDTreeWinSize=120
 
-" Go to definition if tags plugin is enabled
-map go <C-]>
-map gi <C-t>
+" Go to definition if rtags plugin is enabled
+map go <Leader>rj
 
 " Switch between windows
 map <C-h> <C-w>h
 map <C-l> <C-w>l
 
 " Find file in current directory and edit it.
-map <C-k> :Find **<left>
+map <C-q> :Find **<left>
 
 function! Find(name)
   let l:list=system("find . -name '".a:name."' | perl -ne 'print \"$.\\t$_\"'")
