@@ -40,9 +40,9 @@
 "
 "    m             --- insert next empty line (with O) and return back to normal mode
 "
-"    <C-o>         --- go to previous navigation position
+"    <C-i>         --- go to previous navigation position
 "
-"    <C-i>         --- go to next navigation position
+"    <C-o>         --- go to next navigation position
 "
 "    <C-]>         --- go to definition if tags plugin is enabled
 "
