@@ -10,6 +10,10 @@
 "    W             --- move 4 words forward
 "
 "    L             --- go to the bottom of the screen
+"
+"    <F3>          --- to open NERDTree
+"
+"    <F5>          --- to open terminal (then exit inside it to close)
 " in normal mode:
 "    //            --- select word under cursor and search for its next occurence
 "
@@ -36,7 +40,13 @@
 "
 "    m             --- insert next empty line (with O) and return back to normal mode
 "
-"   :vs            --- open the same file in the second tab
+"    <C-o>         --- go to previous navigation position
+"
+"    <C-i>         --- go to next navigation position
+"
+"    go            --- go to definition if tags plugin is enabled
+"
+"    gi            --- revert go to defintion if tags plugin is enabled
 "
 " in visual mode:
 "    //            --- yank selected text and search for its next occurence
@@ -65,7 +75,7 @@ filetype plugin indent on    " required
 
 " Colors
 " colorscheme colorsbox-greenish
-:highlight Normal ctermbg=darkgrey
+" :highlight Normal ctermbg=darkgrey
 :set hlsearch
 let g:cpp_class_scope_highlight = 1
 let g:cpp_member_variable_highlight = 1
@@ -74,7 +84,7 @@ let g:cpp_experimental_simple_template_highlight = 1
 let g:cpp_experimental_template_highlight = 1
 let g:cpp_concepts_highlight = 1
 
-let g:loaded_youcompleteme = 1 " delete later
+" let g:loaded_youcompleteme = 1 " delete later
 
 " cscope
 :cs add cscope.out
@@ -88,7 +98,11 @@ nmap <c-f> :cs find g <c-r>=expand("<cword>")<cr><cr>
 :nnoremap ,, <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 :nnoremap m o<ESC>
 :nnoremap <Space> i <ESC>l
-:nnoremap <TAB> i<TAB><ESC>
+
+" open terminal
+set splitbelow
+:nnoremap <F5> :terminal<ENTER>
+:vnoremap <F5> :terminal<ENTER>
 
 " jump
 :nnoremap J 25j
@@ -133,7 +147,7 @@ map <F3> :NERDTree<ENTER><C-w>l:NERDTreeFind<ENTER><C-w>h
 let NERDTreeQuitOnOpen=1
 let g:NERDTreeWinSize=120
 
-" Go to definition
+" Go to definition if tags plugin is enabled
 map go <C-]>
 map gi <C-t>
 
