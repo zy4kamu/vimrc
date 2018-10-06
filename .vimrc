@@ -126,13 +126,13 @@ set splitbelow
 " indent
 filetype plugin indent on
 
-" show existing tab with 4 spaces width
-set tabstop=4
+" show existing tab with 2 spaces width
+set tabstop=2
 
-" when indenting with '>', use 4 spaces width
-set shiftwidth=4
+" when indenting with '>', use 2 spaces width
+set shiftwidth=2
 
-" On pressing tab, insert 4 spaces
+" On pressing tab, insert 2 spaces
 set expandtab
 
 " Shell scripts
@@ -150,6 +150,10 @@ let g:NERDTreeWinSize=120
 " Go to definition if tags plugin is enabled
 map go <C-]>
 map gi <C-t>
+
+" Switch between windows
+map <C-h> <C-w>h
+map <C-l> <C-w>l
 
 " Find file in current directory and edit it.
 map <C-k> :Find **<left>
