@@ -101,7 +101,8 @@ nmap <c-f> :cs find g <c-r>=expand("<cword>")<cr><cr>
 " tricks
 :nnoremap v$ v$h
 :nnoremap QQ :wqa<ENTER>
-:nnoremap qq :qa!<ENTER>
+:nnoremap qq :q!<ENTER>
+:nnoremap qa :qa!<ENTER>
 :nnoremap E :vs<ENTER><C-w>w:e<SPACE>
 :nnoremap ,, <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 :nnoremap m o<ESC>
@@ -109,8 +110,10 @@ nmap <c-f> :cs find g <c-r>=expand("<cword>")<cr><cr>
 
 " open terminal
 set splitbelow
-:nnoremap <F5> :terminal<ENTER>
-:vnoremap <F5> :terminal<ENTER>
+:map <F5> :let $VIM_DIR=expand('%:p:h')<CR>:terminal<CR>cd $VIM_DIR<CR>clear<CR>
+":nnoremap <F5> :terminal<ENTER>cd $cwd
+":vnoremap <F5> :terminal<ENTER>
+:tnoremap <F5> exit<ENTER>
 
 " jump
 :nnoremap J 25j
@@ -162,8 +165,18 @@ map go <Leader>rj
 map <C-h> <C-w>h
 map <C-l> <C-w>l
 
+" resize horzontal split window
+nmap <C-Up> <C-W>-<C-W>-
+nmap <C-Down> <C-W>+<C-W>+
+
+" resize vertical split window
+nmap <C-Right> <C-W>><C-W>>
+nmap <C-Left> <C-W><<C-W><
+
 " Find file in current directory and edit it.
 map <C-q> :Find **<left>
+
+" User defined functions
 
 function! Find(name)
   let l:list=system("find . -name '".a:name."' | perl -ne 'print \"$.\\t$_\"'")
