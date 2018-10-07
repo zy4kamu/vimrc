@@ -56,11 +56,17 @@
 "
 "    fu            --- find usages with  rtags plugin
 "
+"    <C-y>         --- open list of recent files
+"
 " in visual mode:
 "    //            --- yank selected text and search for its next occurence
 "    
 "    R             --- select text under cursor and create a command which
 "                     replaces it everywhere in the text: :%s/<word>/<word>/g
+" in terminal mode:
+"    F5            --- exit
+"    F3            --- start searching
+"    i             --- return to usual mode
 
 :set number
 :set relativenumber
@@ -79,6 +85,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'wincent/command-t'
 Plugin 'lyuts/vim-rtags'
+Plugin 'yegappan/mru'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -113,6 +120,7 @@ nmap <c-f> :cs find g <c-r>=expand("<cword>")<cr><cr>
 " open terminal
 set splitbelow
 :map <F5> :let $VIM_DIR=expand('%:p:h')<CR>:terminal<CR>cd $VIM_DIR<CR>clear<CR>
+:tnoremap <F4> <C-w>N
 :tnoremap <F5> exit<ENTER>
 
 " jump
@@ -129,6 +137,7 @@ set splitbelow
 :nnoremap // viwy/<C-r>"<ENTER>
 :vnoremap // y/<C-r>"<ENTER>
 :nnoremap <C-u> :CommandT .<ENTER>
+:nnoremap <C-y> :MRU<ENTER>
 
 " replace
 :nnoremap R yiw:%s/<C-r>"/<C-r>"/g<left><left>
