@@ -111,8 +111,6 @@ nmap <c-f> :cs find g <c-r>=expand("<cword>")<cr><cr>
 " open terminal
 set splitbelow
 :map <F5> :let $VIM_DIR=expand('%:p:h')<CR>:terminal<CR>cd $VIM_DIR<CR>clear<CR>
-":nnoremap <F5> :terminal<ENTER>cd $cwd
-":vnoremap <F5> :terminal<ENTER>
 :tnoremap <F5> exit<ENTER>
 
 " jump
@@ -163,13 +161,17 @@ map go <Leader>rj
 
 " Switch between windows
 map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
 map <C-l> <C-w>l
+:tnoremap <C-h> <C-w>h
+:tnoremap <C-j> <C-w>j
+:tnoremap <C-k> <C-w>k
+:tnoremap <C-l> <C-w>l
 
-" resize horzontal split window
+" resize split window
 nmap <C-Up> <C-W>-<C-W>-
 nmap <C-Down> <C-W>+<C-W>+
-
-" resize vertical split window
 nmap <C-Right> <C-W>><C-W>>
 nmap <C-Left> <C-W><<C-W><
 
