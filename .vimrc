@@ -1,4 +1,4 @@
-" user defined commands:
+-
 "
 " in visual and normal mode:
 "    J             --- move down for 25 lines
@@ -52,7 +52,9 @@
 "
 "    C-q           --- search for file (manual function)
 "
-"    C-k           --- search for file with Command-T plugin
+"    C-u           --- search for file with Command-T plugin
+"
+"    fu            --- find usages with  rtags plugin
 "
 " in visual mode:
 "    //            --- yank selected text and search for its next occurence
@@ -126,7 +128,7 @@ set splitbelow
 " search
 :nnoremap // viwy/<C-r>"<ENTER>
 :vnoremap // y/<C-r>"<ENTER>
-:nnoremap <C-k> :CommandT .<ENTER>
+:nnoremap <C-u> :CommandT .<ENTER>
 
 " replace
 :nnoremap R yiw:%s/<C-r>"/<C-r>"/g<left><left>
@@ -158,6 +160,9 @@ let g:NERDTreeWinSize=120
 
 " Go to definition if rtags plugin is enabled
 map go <Leader>rj
+
+" Find usages with rtags plugin
+map fu <Leader>rf
 
 " Switch between windows
 map <C-h> <C-w>h
