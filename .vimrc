@@ -65,7 +65,7 @@
 "                     replaces it everywhere in the text: :%s/<word>/<word>/g
 " in terminal mode:
 "    F5            --- exit
-"    F3            --- start searching
+"    F4            --- start searching
 "    i             --- return to usual mode
 
 :set number
@@ -84,7 +84,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/nerdtree'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'wincent/command-t'
-Plugin 'lyuts/vim-rtags'
+" Plugin 'lyuts/vim-rtags'
 Plugin 'yegappan/mru'
 
 call vundle#end()            " required
@@ -101,7 +101,7 @@ let g:cpp_experimental_simple_template_highlight = 1
 let g:cpp_experimental_template_highlight = 1
 let g:cpp_concepts_highlight = 1
 
-" let g:loaded_youcompleteme = 1 " delete later
+let g:loaded_youcompleteme = 1 " delete later
 
 " cscope
 :cs add cscope.out
@@ -138,6 +138,7 @@ set splitbelow
 :vnoremap // y/<C-r>"<ENTER>
 :nnoremap <C-u> :CommandT .<ENTER>
 :nnoremap <C-y> :MRU<ENTER>
+let CommandTMaxFiles=200000
 
 " replace
 :nnoremap R yiw:%s/<C-r>"/<C-r>"/g<left><left>
@@ -183,11 +184,17 @@ map <C-l> <C-w>l
 :tnoremap <C-k> <C-w>k
 :tnoremap <C-l> <C-w>l
 
-" resize split window
+" Resize split window
 nmap <C-Up> <C-W>-<C-W>-
 nmap <C-Down> <C-W>+<C-W>+
 nmap <C-Right> <C-W>><C-W>>
 nmap <C-Left> <C-W><<C-W><
+
+" Comment code
+:nnoremap cp :s/^/# /g<ENTER>:s/akjsfka;dfkadfja//g<ENTER>
+:vnoremap cp :s/^/# /g<ENTER>:s/akjsfka;dfkadfja//g<ENTER>
+:nnoremap <C-?> :s/^/\/\/ /g<ENTER>:s/akjsfka;dfkadfja//g<ENTER>
+:vnoremap <C-?> :s/^/\/\/ /g<ENTER>:s/akjsfka;dfkadfja//g<ENTER>
 
 " Find file in current directory and edit it.
 map <C-q> :Find **<left>
